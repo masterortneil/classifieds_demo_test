@@ -1,18 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Frontend\RootController;
+use App\Http\Controllers\Frontend\CategoryController;
+use App\Http\Controllers\Frontend\AdsController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [RootController::class, 'index'])->name("root_page");
+Route::get('/post-ad', [PagesController::class, 'ad_form'])->name("get.ad.form");
+Route::post('/post-ad', [AdsController::class, 'store_ad']);
+Route::get('/get_categories_currencies', [CategoryController::class, 'get_categories_currencies']);
