@@ -1,0 +1,27 @@
+@media only screen and (max-width: 767px) {
+
+	#search--form div.box{
+		display: block !important;
+	}
+	#search--form div.box input,
+	#search--form div.box select,
+	#search--form div.box button{
+		width: 100% !important;
+		margin-bottom: 3px
+	}
+
+
+	/*list pages css*/
+	#page_content .wrapper{
+		padding: 10px
+	}
+	#page_content .single_item{
+		display: block;
+	}
+	#page_content .single_item .featured_image,
+	#page_content .single_item .content_box,
+	#page_content .sm-width-100{
+		width: 100%
+	}
+
+}
