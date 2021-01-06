@@ -26,8 +26,32 @@ class PagesController extends Controller
     	return view("FrontendViews.search", compact('categories', 'data', 'request'));
     }
 
+    public function ad_form(){
+        $categories = Category::orderBy('category_name', 'ASC')->get();
+        return view("FrontendViews.add-ads", compact('categories'));
+    }
 
+    public function browse_category_wise($catName){
+        $catData = Category::where('category_name', $catName)->first();
+        if (!$catData) {
+            return abort(404);
+        }
 
+        //else
+        $categories = Category::orderBy('category_name', 'ASC')->get();
+        $data = Ad::where('category_id', '=', $catData->category_id)
+            ->with(['get_category', 'get_images', 'get_currency'])
+            ->orderBy('created_at', 'DESC')->paginate(env('PAGINATE_NUMBER'));
+        return view("FrontendViews.cat_wise", compact('categories', 'data', 'catData'));
+    }
 
+    public function details($slug){
+        $data = Ad::where('slugurl', $slug)->first();
+        if (!$data) {
+            return abort(404);
+        }
+        $categories = Category::orderBy('category_name', 'ASC')->get();
+        return view("FrontendViews.details", compact('data', 'categories'));
+    }
 
 }
