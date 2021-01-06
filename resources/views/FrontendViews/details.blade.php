@@ -18,7 +18,7 @@
                             @foreach($data->get_images as $key=>$image)
                                 <div class="page active">
                                     <div class="page-content">
-                                        <div class="head-shot"><img src="{{$image->img_name}}"/></div>
+                                        <div class="head-shot p-2"><img src="{{$image->img_name}}"/></div>
                                     </div>
                                 </div>
                             @endforeach

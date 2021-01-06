@@ -6,6 +6,7 @@
 
         <div class="px-20 mt-5 wrapper">
             <h2 class="text-3xl mb-3 text-gray-500">{{$data->total()}} ads found in <b>{{$catData->category_name}}</b></h2>
+            @if(!$data->isEmpty())
                 @foreach($data as $key=>$row)
                     <div class="flex justify-between relative p-2 border-solid border-2 border-green-500 mb-4 single_item">
                         <div class="w-1/3 featured_image">
@@ -35,6 +36,11 @@
                 <div class="mt-4 mb-10">
                     {!! $data->render() !!}
                 </div>
+            @else
+                <div class="flex justify-center">
+                    <h4>No Ads Found</h4>
+                </div>
+            @endif
         </div>
     </section>
 @endsection
