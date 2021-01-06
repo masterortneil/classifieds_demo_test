@@ -1,13 +1,8 @@
 @extends("Frontendviews.layouts.master")
 
-@push('styles')
-    <link rel="stylesheet" type="text/css" href="/css/carosuel.css">
-@endpush
-
 @section("content")
 
     <section id="page_content">
-
 
         <div class="px-20 mt-5 wrapper">
             <div class="mb-4 bg-white p-3">
@@ -18,28 +13,21 @@
             <div class="flex justify-between relative p-2 mb-4 bg-white single_item">
 
                 <div class="w-8/12 featured_image">
-                    <div class="our-team">
-                        <div class="multi-column-carousel">
-                            <div class="pagination-container"></div>
-                            <div class="viewport">
-                                <div class="multi-column-button previous hidden"></div>
-                                <div class="multi-column-button next"></div>
-                                <div class="page-container">
-                                    @foreach($data->get_images as $key=>$image)
-                                        <div class="page active">
-                                            <div class="page-content">
-                                                <div class="head-shot"><img src="{{$image->img_name}}"/></div>
-                                            </div>
-                                        </div>
-                                    @endforeach
+
+                        <div class="page-container">
+                            @foreach($data->get_images as $key=>$image)
+                                <div class="page active">
+                                    <div class="page-content">
+                                        <div class="head-shot"><img src="{{$image->img_name}}"/></div>
+                                    </div>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
-                    </div>
+
                 </div>
 
                 <div class="w-4/12 px-5 py-2 mb-6 content_box">
-                    <h4 class="text-xl font-bold p-2 border-solid border-b-2 border-light-blue-500 italic  text-gray-400">USD 1400</h4>
+                    <h4 class="text-xl font-bold p-2 border-solid border-b-2 border-light-blue-500  text-gray-400">Contact Seller</h4>
                     <div class="text-xl p-2 border-solid border-b-2 border-light-blue-500 italic  text-gray-400">
                         <a href="" class="block">
                             <div class="flex justify-start">
@@ -71,7 +59,7 @@
                                     <img src="/images/icons/envelope.png" class="w-8">
                                 </div>
                                 <div>
-                                    <span class="">Email the seller</span>
+                                    <span class=""><a href="mailto:{{$data->email}}?Subject=Advert: {{$data->title}}">Email the seller</a></span>
                                 </div>
                             </div>
                         </a>
@@ -99,5 +87,4 @@
             </div>
     </section>
 @endsection
-
 
