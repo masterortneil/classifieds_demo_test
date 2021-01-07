@@ -9,4 +9,4 @@
 
 ## Browsing and Posting an Ad
 
-- To Post an Ad use the following link name: http://classifieds_ads.demo/post-ad
+- To Post an Ad use the following URL: http://classifieds_ads.demo/post-ad or http://YourHostName/post-ad
