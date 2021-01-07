@@ -2,7 +2,7 @@
     <div>
         <div class='flex justify-center'>
             <div class='bg-green-300 w-96 p-3' v-show="success">
-                Ads Created Successfully
+                Ad Saved Successfully
             </div>
         </div>
 

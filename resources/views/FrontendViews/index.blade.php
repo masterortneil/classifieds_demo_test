@@ -25,12 +25,12 @@
             </section>
 
             <section>
-                
+
                 <div class="p-20 mt-5">
-                    <h2 class="text-3xl mb-3 font-bold text-gray-500">Browse by category</h2>
+                    <h2 class="text-3xl mb-3 font-bold text-gray-500">Browse by Category</h2>
                     <div class="grid sm:grid-cols-1 md:grid-cols-4 gap-4">
                         @foreach($categories as $category)
-                        <div class="p-3 bg-gray-200 hover:bg-gray-300">
+                        <div class="p-3 rounded p-4 bg-gray-200 hover:bg-gray-300">
                             <a href="{{ route('browseByCategory.get', $category->category_name) }}">
                                 <div class="flex justify-center">
                                     <img src="/images/cat_pic.png" class="object-center">
