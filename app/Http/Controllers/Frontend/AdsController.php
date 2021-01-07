@@ -9,9 +9,10 @@ use App\Models\Ad;
 use App\Models\Image;
 use Carbon\Carbon;
 
-
 class AdsController extends Controller
 {
+
+
     public function store_ad(Request $request){
         $validation = Validator::make($request->all(), [
             'title'=>'required|string|max:80',
@@ -52,7 +53,6 @@ class AdsController extends Controller
                 'created_at'=>$current_time,
             ]);
         }
-
         return response()->json(['message'=>'Ad Created Successfully'], 200);
     }
 

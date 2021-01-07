@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Ad;
+use Artisan;
+use Closure;
 
 class PagesController extends Controller
 {
@@ -54,4 +56,11 @@ class PagesController extends Controller
         return view("FrontendViews.details", compact('data', 'categories'));
     }
 
+    public function handle($request, Closure $next)
+    {
+        if (env('APP_DEBUG') || env('APP_ENV') === 'local')
+            Artisan::call('view:clear');
+            Artisan::call('cache:clear');
+        return $next($request);
+    }
 }

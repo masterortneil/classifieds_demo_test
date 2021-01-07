@@ -4,15 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{csrf_token()}}">
-
     <title>Classified Ads</title>
     <link rel="stylesheet" type="text/css" href="/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="/css/tailwind.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     @stack('styles')
     <link rel="stylesheet" type="text/css" href="/css/responsive.css">
-
-
 </head>
 <body style="background: #F1F3F6">
 <div id="app">
